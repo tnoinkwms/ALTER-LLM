@@ -45,7 +45,10 @@
         }
 
         .results-section {
-            margin-top: 20px;
+            font-size: 1.0em; /* Adjust size as needed */
+            text-align: left;
+            margin-top: 40px; /* Space above the Abstract heading */
+            margin-bottom: 10px; /* Space below the Abstract heading */
         }
         .figure {
             margin-top: 20px;
@@ -70,9 +73,15 @@
             font-weight: normal; /* Ensure the rest of the title is not bold */
         }
         .abstract-heading {
-            font-size: 1.5em; /* Adjust size as needed */
+            font-size: 1.0em; /* Adjust size as needed */
             text-align: left;
-            margin-top: 30px; /* Space above the Abstract heading */
+            margin-top: 40px; /* Space above the Abstract heading */
+            margin-bottom: 10px; /* Space below the Abstract heading */
+        }
+        .method-section{
+            font-size: 1.0em; /* Adjust size as needed */
+            text-align: left;
+            margin-top: 40px; /* Space above the Abstract heading */
             margin-bottom: 10px; /* Space below the Abstract heading */
         }
 
@@ -82,7 +91,7 @@
     <div class="container">
         <h1><span class="highlighted-title">From Text to Motion:</span><br>Harnessing GPT-4 for the Autonomous Pose Generation in Humanoid Robot ALTER3</h1>
         <p class="author">Takahide Yoshida, Atsushi Masumori and Takashi Ikegami</p> 
-        <h2 class = "abstract-heading" >Abstruct</h2>
+        <h3 class = "abstract-heading" >Abstruct</h3>
         <p>We report the development of the first humanoid robot capable of generating spontaneous motion through the use of a Large Language Model (LLM), specifically GPT-4. By integrating GPT-4 into our proprietary android, Alter3, we have effectively endowed the LLM with a form of embodiment, a feature generally considered absent in LLMs. Intriguingly, this setup allows the android to adopt various poses, such as a 'selfie' stance, without explicit programming for each body part, demonstrating zero-shot learning capabilities. Verbal feedback can be used to adjust poses, eliminating the need for fine-tuning. However, challenges persist in terms of real-time generation speed and the duration for which a conversation can be maintained with Alter3, currently limited to 10-30 minutes. We discuss potential solutions for these issues.</p>
         
         <!-- Video Embedding -->
@@ -90,71 +99,95 @@
         <div class="video-container">
             <iframe width="423" height="752" src="https://www.youtube.com/embed/SAc-O5FDJ4k" title="play the metal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
 
-        <!-- Small Heading Example -->
-        <h2 class="small-heading">pretend the ghost</h2> <!-- Small heading for a new section -->
-        <div class="video-container">
-            <iframe width="423" height="752" src="https://www.youtube.com/embed/Npa0aBJrUS4" title="pretend ghost" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!-- Results Section -->
+        <div class="method-section">
+            <h2>What we do?</h2>
+            <p>Before the LLM appeared, we had to control all the 43 axis in certain order to mimic a person's pose or to pretend a behavior such as serving a tea or playing a chess. And the process usually required many refinement manually by ourselves. Thanks to LLM, we are now free from the iterative labors.Here is a procedure to control the Alter3 humanoid  using verbal instructions.  What we do is to successively apply two protocols written in natural language known as a chain of thought (CoT) \citep{wei2023chainofthought} and no iteration of a learning process is required i.e. a zero shot learning. Practically speaking, we have used the following protocols.  </p>
+            <div class="figure">
+                <img src="./fig_prompt.png" alt="Result">
+                <p class="caption">Figure 1: Caption describing the result.</p>
+            </div>
+            <!-- More figures as needed -->
         </div>
-        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
-
-        <h2 class="small-heading">I was enjoying a movie while eating popcorn at the theater when I realized that I was actually eating the popcorn of the person next to me.</h2> <!-- Small heading for a new section -->
+        
+        <h3 class="small-heading">I was enjoying a movie while eating popcorn at the theater when I realized that I was actually eating the popcorn of the person next to me.</h3> <!-- Small heading for a new section -->
         <div class="video-container">
             <iframe width="423" height="752" src="https://www.youtube.com/embed/qNldkPX-y0w" title="shy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
 
-        <h2 class="small-heading">take a selfie with your phone</h2> <!-- Small heading for a new section -->
-        <div class="video-container">
-            <iframe width="423" height="752" src="https://www.youtube.com/embed/xKlTKDyis6Q" title="selfie" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+        <div class="method-section">
+            <h2>linguistic feedback</h2>
+            <p>we showed that various motions can be generated well with the aforementioned system. However, there  is major problems with this system. That is that detailed information about Alter3's body is not included in prompt1, and there's no feedback on the generated motion. Thus, Alter3 cannot accurately understand details such as "how high the hand is raised" and cannot improve its motions accordingly. 
+
+            With this addition, first, Alter3 can rewrite the code in response to linguistic feedback from humans (for instance, "raise your arm a bit more when taking a selfie") and store the improved motion code as motion memory in the database. This ensures that when the motion is generated next, the trained motion can be used. By accumulating information about the Arter's body through feedback, the memory can be used  as body schema. 
+                
+            LLMs such as GPT-4 and Claude are accessible primarily via API calls, and their parametric weights remain proprietary and not generally available. Therefore, by empirically developing and using external memory through feedback, the ALTER3 body model can be used by GPT4 without updating the parametric\citep{zhao2023expel}. </p>
+            <div class="figure">
+                <img src="./prompt_fb.png" alt="Result">
+                <p class="caption">Figure 1: Caption describing the result.</p>
+            </div>
+            <!-- More figures as needed -->
         </div>
-        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
 
-
-        <h2 class="small-heading">throwing the ball underhand pitch</h2> <!-- Small heading for a new section -->
-        <div class="video-container">
-            <iframe width="423" height="752" src="https://www.youtube.com/embed/syqMLPh2pSk" title="throw the ball" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
-
-        <h2 class="small-heading">pretend the snake</h2> <!-- Small heading for a new section -->
-        <div class="video-container">
-            <iframe width="423" height="752" src="https://www.youtube.com/embed/_ZBrvYoKNlA" title="pretend snake" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
-
-        <h2 class="small-heading"> In the park, as I jogged, the world seemed to narrate an ancient tale of survival, each footfall echoing eons of existence.</h2> <!-- Small heading for a new section -->
-        <div class="video-container">
-            <iframe width="423" height="752" src="https://www.youtube.com/embed/VJ4FNcldEz0" title="jogging" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
-
-        <h2 class="small-heading">drink some tea</h2> <!-- Small heading for a new section -->
-        <div class="video-container">
-            <iframe width="423" height="752" src="https://www.youtube.com/embed/RECDvDoBRS0" title="drink a tea" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
-
-        <h2 class="small-heading">play the guitar</h2> <!-- Small heading for a new section -->
-        <div class="video-container">
-            <iframe width="423" height="752" src="https://www.youtube.com/embed/KZMrL_6zX6o" title="guitar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
-
-
-
-
-        <!-- Results Section -->
         <div class="results-section">
-            <h2>Results</h2>
-            <p>We generated a total of nine videos such as gestures like selfie, mimicry motion, and emotional movements as described above. The subjects (n=107) watched these videos and evaluate the expressive ability of the GPT4. The rating is on a 5-point scale, with 1 being the worst rating. For the control group, we utilized random movements from the ALTER3. To these movements, we attached random motion notations generated by GPT4 as labels. These labeled control videos were subtly incorporated into the survey, with three of them being dispersed among the main experimental videos shown to participants.As a result, the motions generated by GPT4 was rated higher relative to the control group. </p>
+            <h2>Result</h2>
+            <p>We generated a total of nine videos such as gestures like selfie, mimicry motion, and emotional movements as described above. The subjects (n=107) watched these videos and evaluate the expressive ability of the GPT4. The rating is on a 5-point scale, with 1 being the worst rating. For the control group, we utilized random movements from the ALTER3. To these movements, we attached random motion notations generated by GPT4 as labels. These labeled control videos were subtly incorporated into the survey, with three of them being dispersed among the main experimental videos shown to participants.As a result, the motions generated by GPT4 was rated higher relative to the control group.</p>
             <div class="figure">
                 <img src="./average.png" alt="Result">
                 <p class="caption">Figure 1: Caption describing the result.</p>
             </div>
             <!-- More figures as needed -->
         </div>
+
+        <h2>Motions</h2>
+        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
+        <!-- Small Heading Example -->
+        <h3 class="small-heading">pretend the ghost</h3> <!-- Small heading for a new section -->
+        <div class="video-container">
+            <iframe width="423" height="752" src="https://www.youtube.com/embed/Npa0aBJrUS4" title="pretend ghost" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
+
+        <h3 class="small-heading">take a selfie with your phone</h3> <!-- Small heading for a new section -->
+        <div class="video-container">
+            <iframe width="423" height="752" src="https://www.youtube.com/embed/xKlTKDyis6Q" title="selfie" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
+
+
+        <h3 class="small-heading">throwing the ball underhand pitch</h3> <!-- Small heading for a new section -->
+        <div class="video-container">
+            <iframe width="423" height="752" src="https://www.youtube.com/embed/syqMLPh2pSk" title="throw the ball" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
+
+        <h3 class="small-heading">pretend the snake</h3> <!-- Small heading for a new section -->
+        <div class="video-container">
+            <iframe width="423" height="752" src="https://www.youtube.com/embed/_ZBrvYoKNlA" title="pretend snake" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
+
+        <h3 class="small-heading"> In the park, as I jogged, the world seemed to narrate an ancient tale of survival, each footfall echoing eons of existence.</h3> <!-- Small heading for a new section -->
+        <div class="video-container">
+            <iframe width="423" height="752" src="https://www.youtube.com/embed/VJ4FNcldEz0" title="jogging" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
+
+        <h3 class="small-heading">drink some tea</h3> <!-- Small heading for a new section -->
+        <div class="video-container">
+            <iframe width="423" height="752" src="https://www.youtube.com/embed/RECDvDoBRS0" title="drink a tea" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
+
+        <h3 class="small-heading">play the guitar</h3> <!-- Small heading for a new section -->
+        <div class="video-container">
+            <iframe width="423" height="752" src="https://www.youtube.com/embed/KZMrL_6zX6o" title="guitar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
+
         
         <!-- More content here -->
     </div>
