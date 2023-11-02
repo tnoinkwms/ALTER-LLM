@@ -38,10 +38,10 @@
             text-align: center;
         }
         .author {
-            font-size: 1.5em;
+            font-size: 1.2em;
             text-align: center;
             margin-top: 5px;
-            color: #2ec7ff;
+            color: #2d3792;
         }
 
         .results-section {
@@ -59,15 +59,30 @@
             font-size: 0.9em;
             color: #666;
         }
+        .highlighted-title {
+            font-size: 1.2em; /* Adjust size as needed */
+            font-weight: bold;
+        }
+
+        /* Styles for the title to be split on two lines */
         h1 {
             text-align: center;
+            font-weight: normal; /* Ensure the rest of the title is not bold */
         }
+        .abstract-heading {
+            font-size: 1.5em; /* Adjust size as needed */
+            text-align: left;
+            margin-top: 30px; /* Space above the Abstract heading */
+            margin-bottom: 10px; /* Space below the Abstract heading */
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>From Text to Motion: Harnessing GPT-4 for the Autonomous Pose Generation in Humanoid Robot ALTER3</h1>
+        <h1><span class="highlighted-title">From Text to Motion:</span><br>Harnessing GPT-4 for the Autonomous Pose Generation in Humanoid Robot ALTER3</h1>
         <p class="author">Takahide Yoshida, Atsushi Masumori and Takashi Ikegami</p> 
+        <h2 class = "abstract-heading" >Abstruct</h2>
         <p>We report the development of the first humanoid robot capable of generating spontaneous motion through the use of a Large Language Model (LLM), specifically GPT-4. By integrating GPT-4 into our proprietary android, Alter3, we have effectively endowed the LLM with a form of embodiment, a feature generally considered absent in LLMs. Intriguingly, this setup allows the android to adopt various poses, such as a 'selfie' stance, without explicit programming for each body part, demonstrating zero-shot learning capabilities. Verbal feedback can be used to adjust poses, eliminating the need for fine-tuning. However, challenges persist in terms of real-time generation speed and the duration for which a conversation can be maintained with Alter3, currently limited to 10-30 minutes. We discuss potential solutions for these issues.</p>
         
         <!-- Video Embedding -->
