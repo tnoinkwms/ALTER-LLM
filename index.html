@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Research Paper Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-top: 25px;
+            height: 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .results-section {
+            margin-top: 20px;
+        }
+        .figure {
+            margin-top: 20px;
+        }
+        .figure img {
+            max-width: 100%;
+            height: auto;
+        }
+        .caption {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Research Paper Title</h1>
+        <p>Abstract or introduction of the research paper.</p>
+        
+        <!-- Video Embedding -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <!-- Results Section -->
+        <div class="results-section">
+            <h2>Results</h2>
+            <p>Summary of the results.</p>
+            <div class="figure">
+                <img src="path-to-image-of-result.jpg" alt="Result">
+                <p class="caption">Figure 1: Caption describing the result.</p>
+            </div>
+            <!-- More figures as needed -->
+        </div>
+        
+        <!-- More content here -->
+    </div>
+</body>
+</html>
