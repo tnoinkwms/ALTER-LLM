@@ -40,27 +40,17 @@
         .author-info {
             text-align: center;
             margin-top: 5px;
-            }
-            .author {
-            font-size: 1.2em;
-            color: #2d3792;
-            }
-            .affiliation-group {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            }
-            .affiliation-logo {
-            width: 50px; /* ロゴの幅を適宜設定 */
-            height: auto; /* 高さを自動調整してアスペクト比を維持 */
-            margin-right: 10px; /* テキストとの間に余白を設定 */
-            }
-            .affiliation, .corresponding-author {
-            font-size: 0.9em;
-            }
-            sup {
-            font-size: 0.75em;
-            }
+        }
+        .author {
+        font-size: 1.2em;
+        color: #2d3792;
+        }
+        .affiliation, .corresponding-author {
+        font-size: 0.9em;
+        }
+        sup {
+        font-size: 0.75em;
+        }
         .images-container {
             text-align: center; /* 画像を中央揃えにする */
             margin-top: 20px; /* 上のコンテンツとの間隔を開ける */
@@ -119,17 +109,12 @@
         <h1><span class="highlighted-title">From Text to Motion:</span><br>Harnessing GPT-4 for the Autonomous Pose Generation in Humanoid Robot ALTER3</h1>
         <div class="author-info">
             <p class="author">Takahide Yoshida<sup>1</sup>, Atsushi Masumori<sup>1,2</sup>, and Takashi Ikegami<sup>1,2</sup></p>
-            
-            <div class="affiliation-group">
-              <img src="./UnivOfTokyo_logo.png" alt="University Logo" class="affiliation-logo">
-              <p class="affiliation"><sup>1</sup>Department of General Systems Science, University of Tokyo, Tokyo, Japan</p>
-            </div>
-          
-            <div class="affiliation-group">
-              <img src="./AM.png" alt="Company Logo" class="affiliation-logo">
-              <p class="affiliation"><sup>2</sup>Alternative Machine Inc., Tokyo, Japan</p>
-            </div>
+            <p class="affiliation"><sup>1</sup>Department of General Systems Science, University of Tokyo, Tokyo, Japan     <sup>2</sup>Alternative Machine Inc., Tokyo, Japan<</p>
           </div>
+        <div class="images-container">
+            <img src="./UnivOfTokyo_logo.png" alt="First Image" class="image">
+            <img src="./AM.png" alt="Second Image" class="image">
+        </div>  
         <h3 class = "abstract-heading" >Abstruct</h3>
         <p>We report the development of the first humanoid robot capable of generating spontaneous motion through the use of a Large Language Model (LLM), specifically GPT-4. By integrating GPT-4 into our proprietary android, Alter3, we have effectively endowed the LLM with a form of embodiment, a feature generally considered absent in LLMs. Intriguingly, this setup allows the android to adopt various poses, such as a 'selfie' stance, without explicit programming for each body part, demonstrating zero-shot learning capabilities. Verbal feedback can be used to adjust poses, eliminating the need for fine-tuning. However, challenges persist in terms of real-time generation speed and the duration for which a conversation can be maintained with Alter3, currently limited to 10-30 minutes. We discuss potential solutions for these issues.</p>
         
