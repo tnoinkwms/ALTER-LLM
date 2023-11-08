@@ -164,7 +164,7 @@
         <!-- Results Section -->
         <div class="method-section">
             <h2>What we do?</h2>
-            <p>Before the LLM appeared, we had to control all the 43 axis in certain order to mimic a person's pose or to pretend a behavior such as serving a tea or playing a chess. And the process usually required many refinement manually by ourselves. Thanks to LLM, we are now free from the iterative labors.Here is a procedure to control the Alter3 humanoid  using verbal instructions.  What we do is to successively apply two protocols written in natural language known as a chain of thought (CoT) \citep{wei2023chainofthought} and no iteration of a learning process is required i.e. a zero shot learning. Practically speaking, we have used the following protocols.  </p>
+            <p>Before the LLM appeared, we had to control all the 43 axis in certain order to mimic a person's pose or to pretend a behavior such as serving a tea or playing a chess. And the process usually required many refinement manually by ourselves. Thanks to LLM, we are now free from the iterative labors.Here is a procedure to control the Alter3 humanoid  using verbal instructions.It is generally expected that descriptions of human movement would be more prevalent than those pertaining to robotic arms or quadrupedal animals. Furthermore, in terms of linguistic expression, human motion can be articulated in greater detail. It is conceivable that within the corpus learned by GPT-4, there is an abundance of descriptions pertaining to human movement.From this perspective, it stands to reason that humanoid robots, sharing a similar form to humans, could generate movements with high precision in a zero-shot manner, without the need for reward function settings or fine-tuning as necessitated in other research.   What we do is to successively apply two protocols written in natural language known as a chain of thought (CoT) and no iteration of a learning process is required i.e. a zero shot learning. Practically speaking, we have used the following protocols.  </p>
             <div class="figure">
                 <img src="./fig_prompt.png" alt="Result">
                 <p class="caption">Figure 1: Caption describing the result.</p>
@@ -198,7 +198,7 @@
 
             With this addition, first, Alter3 can rewrite the code in response to linguistic feedback from humans (for instance, "raise your arm a bit more when taking a selfie") and store the improved motion code as motion memory in the database. This ensures that when the motion is generated next, the trained motion can be used. By accumulating information about the Arter's body through feedback, the memory can be used  as body schema. 
                 
-            LLMs such as GPT-4 and Claude are accessible primarily via API calls, and their parametric weights remain proprietary and not generally available. Therefore, by empirically developing and using external memory through feedback, the ALTER3 body model can be used by GPT4 without updating the parametric\citep{zhao2023expel}. </p>
+            LLMs such as GPT-4 and Claude are accessible primarily via API calls, and their parametric weights remain proprietary and not generally available. Therefore, by empirically developing and using external memory through feedback, the ALTER3 body model can be used by GPT4 without updating the parametric. </p>
             <div class="figure">
                 <img src="./prompt_fb.png" alt="Result">
                 <p class="caption">Figure 1: Caption describing the result.</p>
