@@ -101,12 +101,34 @@
             margin-top: 40px; /* Space above the Abstract heading */
             margin-bottom: 10px; /* Space below the Abstract heading */
         }
+        .collapsible {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            }
+
+            .active, .collapsible:hover {
+            background-color: #555;
+            }
+
+            .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+            }
 
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 style="margin-top: 40px;"><span class="highlighted-title">From Text to Motion:</span><br>Harnessing GPT-4 for the Autonomous Pose Generation in Humanoid Robot ALTER3</h1>
+        <h1 style="margin-top: 50px;"><span class="highlighted-title">From Text to Motion:</span><br>Harnessing GPT-4 for the Autonomous Pose Generation in Humanoid Robot ALTER3</h1>
         <div class="author-info">
             <p class="author">Takahide Yoshida<sup>1</sup>, Atsushi Masumori<sup>1,2</sup>, and Takashi Ikegami<sup>1,2</sup></p>
             <p class="affiliation"><sup>1</sup>Department of General Systems Science, University of Tokyo, Tokyo, Japan     <sup>2</sup>Alternative Machine Inc., Tokyo, Japan<</p>
@@ -209,9 +231,30 @@
             <iframe width="423" height="752" src="https://www.youtube.com/embed/KZMrL_6zX6o" title="guitar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <p class="video-caption">Video 1: Humanoid robot ALTER3 performing tasks with GPT-4 integration</p> <!-- Video caption -->
-
+        <h4>My Collapsible</h4>
+        <p>Click on the button to toggle between hiding and showing the collapsible content.</p>
+        <button type="button" class="collapsible">Open Collapsible</button>
+        <div class="content">
+          <p>This is the collapsible content. It is hidden by default, and will be shown when you click on the button above.</p>
+        </div>
         
         <!-- More content here -->
     </div>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>
 </body>
 </html>
