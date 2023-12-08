@@ -166,7 +166,7 @@
             <p>Before the LLM appeared, we had to control all the 43 axes in certain order to mimic a person's pose or to pretend a behavior such as serving a tea or playing a chess. And the process usually required many refinements manually by ourselves. Thanks to LLM, we are now free from the iterative labors. 
                 Here is a procedure to control the Alter3 humanoid using verbal instructions.  What we do is to successively apply two protocols written in natural language known as a chain of thought (CoT) \cite{wei2023chainofthought} and no iteration of a learning process is required (i.e. a zero shot learning). Practically speaking, we have used the following protocols\footnote{One important thing to note is that it’s well-known at this point that GPT-4 is non-deterministic, even at $temperature=0.0$. Therefore, even with identical inputs, different patterns of motion can be generated. This is a characteristic of OpenAI's GPT-4 and, while it poses an issue in terms of reproducibility, it should not be considered a reason to doubt its ability to generate movement.</p>
             <div class="figure">
-                <img src="./fig_prompt.png" alt="Result">
+                <img src="./archtecture.png" alt="Result">
                 <p class="caption">Figure 1: A procedure to control the Alter3 humanoid  using verbal instructions. Output python code to control Alter3 from natural language using primpt1, 2. The architecture is based on CoT.</p>
             </div>
             <!-- More figures as needed -->
